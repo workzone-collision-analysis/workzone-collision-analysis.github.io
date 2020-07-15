@@ -1,0 +1,25 @@
+@media screen and (min-width:991px){
+    nav{
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+    }
+
+    #navigation{
+        display:flex;
+    }
+
+    .main__section{
+        border-left:1px solid #DDDDDD;
+    }
+}
+
+@media screen and (max-width:991px){
+    #navigation{
+        display:none;
+    }
+    .main__section{
+        border-left:none;
+    }
+}

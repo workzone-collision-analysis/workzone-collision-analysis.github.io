@@ -1,0 +1,33 @@
+nav{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height:100%;
+    padding-left:30px;
+    padding-top:50px;
+}
+
+#nav__home-btn{
+    font-size:20px;
+    font-weight:400;
+    color: #969696;
+    margin-top:20px;
+}
+
+#nav__home-btn:hover{
+    color:#2979FF;
+}
+
+nav .nav__content-wrapper{
+    font-size:20px;
+    font-weight:400;
+    color: #969696;
+}
+
+nav .nav__content{
+    margin-bottom:20px;
+}
+
+.nav__content:hover{
+    color:#2979FF;
+}

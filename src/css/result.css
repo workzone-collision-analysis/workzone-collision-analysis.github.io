@@ -1,0 +1,11 @@
+#main__results{
+    min-height:120%;
+}
+#result__dashboard{
+    width: 100%;
+}
+#result__dashboard iframe{
+    width: 80%;
+    padding:20px;
+    height:80vh;
+}
