@@ -1,8 +1,12 @@
-nav{
+#sidebar{
     display:flex;
+    position:fixed;
+    height:100%;
+    top:0;
+    left:0;
+    z-index: 1;
     flex-direction: column;
     justify-content: space-around;
-    height:100%;
     padding-left:30px;
     padding-top:50px;
 }
@@ -18,16 +22,30 @@ nav{
     color:#2979FF;
 }
 
-nav .nav__content-wrapper{
-    font-size:20px;
-    font-weight:400;
-    color: #969696;
+.nav{
+    display:flex;
+    flex-direction: column;
 }
 
-nav .nav__content{
+
+nav .nav-item{
     margin-bottom:20px;
 }
 
-.nav__content:hover{
+.nav-item {
+    color: #969696;
+    font-size:20px;
+    font-weight:400;
+}
+
+.nav-item a{
+    color: #969696;
+}
+
+.nav-item a.active{
+    color:#2979FF;
+}
+
+.nav-item a:hover{
     color:#2979FF;
 }
