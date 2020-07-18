@@ -43,8 +43,10 @@ nav .nav-item{
 
 .nav-item a.active{
     color:#2979FF;
+    font-weight:700;
 }
 
 .nav-item a:hover{
     color:#2979FF;
+    font-weight:700;
 }
