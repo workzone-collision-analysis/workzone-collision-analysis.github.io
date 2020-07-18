@@ -2,6 +2,10 @@
     #sidebar{
         display:flex;
     }
+
+    #nav_fix-top{
+        display:none;
+    }
     .main__section{
         border-left:1px solid #DDDDDD;
         padding-left:50px;
@@ -49,7 +53,7 @@
         padding-bottom:20px;
     }
     #main__cover-page #logos{
-        padding: 0 20px 0 20px;
+        padding: 30px 20px 0 20px;
     }
 
     #main__cover-page{
@@ -69,5 +73,9 @@
 
     #cover{
         display:none;
+    }
+
+    #nav_fix-top{
+        display:flex;
     }
 }
