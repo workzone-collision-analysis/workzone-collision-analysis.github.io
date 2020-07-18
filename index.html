@@ -17,7 +17,7 @@
 <div class="container-fluid">
     <div class="row" id="body__row">
         <nav class="col-md-3 col-lg-3" id="sidebar">
-            <ul class="nav__content-wrapper nav__main list-group">
+            <ul class="nav__content-wrapper nav__main">
                 <li class="nav-item">
                     <a class="nav-link .active" href="#main__cover-page" id="nav__home-btn">Home</a>
                 </li>
@@ -44,7 +44,7 @@
                 </li>
             </ul>
         </nav>
-        <main class="col-md-12 col-lg-9 ml-sm-auto" id="main" >
+        <main class="col-md-12 col-lg-9 ml-sm-auto" id="main">
             <section class="container-fluid main__section" id="main__cover-page">
                 <div id="logos">
                     <img alt="NYU CUSP LOGO" src="src/image/cusp.png">
@@ -52,35 +52,106 @@
                 </div>
                 <h1>Work Zone Interagency <br> Traffic Data Modeling and Analysis </h1>
                 <h4>NYU CUSP Capstone project 2020</h4>
-                <img id='cover' src="src/image/cover.png">
+                <img id='cover' src="src/image/cover.png" alt="cover page illustration">
 
 
             </section>
             <section class="container-fluid main__section" id="main__overview">
                 <h2 id="section1">Overview</h2>
+                <h3>Background</h3>
                 <p>Temporary work zones for roadway constructions have the potential to significantly impact mobility
                     and safety for all roadway users. An increase in the number of people using local streets because of
                     work zone diversion plans may increase the likelihood of crashes, including crashes involving
                     vulnerable populations (e.g., cyclists, seniors, and individuals with disabilities). This project
                     brings together disparate data sets to allow for a more comprehensive overview of collisions and
                     work zones. </p>
-                <p> Road construction events are a necessary part of keeping road infrastructure in good condition but
-                    can pose significant safety problems when implemented. Transportation authorities in NYC seek a
-                    better understanding of the type, severity, and extent of mobility impacts associated with work
-                    zones. This project proposes using a k-means clustering approach to predict the probability of a
-                    vehicle collision occurring in the proximity of a road construction event (i.e work zone). The
-                    proposed clustering method is applied to over 20,000 construction and emergency construction events
-                    of relatively short duration in New York City to identify types of work zones that may present
-                    greater safety risks. The results of this project are in service of enabling practitioners to employ
+                <h3>Problem Statement</h3>
+                <div>
+                    <h1>Can street features and roadway construction events be used to model the
+                        relationship between work zones and vehicle collisions? </h1>
+                </div>
+
+                <h3>Scope</h3>
+                <div class="row">
+                    <div class="col-8 col-sm-5 col-md-4 col-lg-3 scope__column">
+                        <img alt="Dataset Diagram" src="src/image/database.png">
+                        <h4>Data Wrangling</h4>
+                    </div>
+                    <div class="col-8 col-sm-5 col-md-4 col-lg-3 scope__column">
+                        <img alt="Clustering Diagram" src="src/image/clustering.png">
+                        <h4>Clustering</h4>
+                    </div>
+                    <div class="col-8 col-sm-5 col-md-4 col-lg-3 scope__column">
+                        <img alt="Dashboard Diagram" src="src/image/dashboard.png">
+                        <h4>Dashboard</h4>
+                    </div>
+                </div>
+                <p> This project proposes using a k-means clustering approach to predict the probability of a vehicle
+                    collision occurring in the proximity of a road construction event (i.e work zone). The proposed
+                    clustering method is applied to over 20,000 construction and emergency construction events of
+                    relatively short duration in New York City to identify types of work zones that may present greater
+                    safety risks. The results of this project are in service of enabling practitioners to employ
                     appropriate mitigation strategies during project programming, design, and in the development of
                     effective transportation management plans. </p>
+
             </section>
             <section class="container-fluid main__section" id="main__data">
                 <h2 id="section2">Project Data</h2>
+                <div class="row">
+                    <div class="col-8 col-sm-5 col-md-4 col-lg-3 data__column">
+                        <h4>511 Events</h4>
+                        <span>Street Characteristic</span>
+                    </div>
+                    <div class="col-8 col-sm-5 col-md-4 col-lg-3 data__column">
+                        <h4>Street Closure</h4>
+                        <span>Street Characteristic</span>
+                    </div>
+                    <div class="col-8 col-sm-5 col-md-4 col-lg-3 data__column">
+                        <h4>Crash</h4>
+                        <span>Street Characteristic</span>
+                    </div>
+                    <div class="col-8 col-sm-5 col-md-4 col-lg-3 data__column">
+                        <h4>LION</h4>
+                        <span>Street Characteristic</span>
+                    </div>
+                    <div class="col-8 col-sm-5 col-md-4 col-lg-3 data__column">
+                        <h4>Sharedstreet</h4>
+                        <span>Street Characteristic</span>
+                    </div>
+                </div>
+                <p>This project is unique in that all data sources used in this research are publicly available
+                    datasets. The team did not have access to a single, unified data source that provided information
+                    about the location and timing of construction work zones within NYC. Instead, the team brought
+                    together disparate datasets to produce an approximation of work zone events and their attributes
+                    (road type, duration, etc.). The diagram below shows the features taken from each dataset to produce
+                    a single dataset of construction events of a relatively short duration.</p>
 
+                <p>To derive the crashes that occurred in the proximity of each work zone the team used data available
+                    from the NYC Open Data portal on NYPD Automobile Collisions. This dataset provides the location and
+                    time of all automobile accidents as reported by the NYPD. These crashes are geocoded to a
+                    latitude/longitude and provide information about the street and/or cross street where the crash
+                    occurred. </p>
             </section>
             <section class="container-fluid main__section" id="main__methodology">
                 <h2 id="section3">Methodology</h2>
+                <div id="methodology__wrangling">
+
+                </div>
+                <div id="methodology__clustering">
+                    <p>With the spatial datasets wrangled into a common reference system, the team employed a k-means
+                        clustering algorithm. This approach was selected to provide a predictive framework to understand
+                        the probability of a crash occurring in the proximity of a work zone given certain
+                        characteristics. The clustering approach also provides the opportunity to identify different
+                        “cohorts” of work zones and identify work zones that may have a higher crash probability. The
+                        results of this methodology can serve to provide transportation authorities and the capstone
+                        sponsor with more information about work zone related safety hazards.</p>
+                </div>
+                <div id="methodology__wrangling">
+
+                </div>
+                <div id="methodology__wrangling">
+
+                </div>
             </section>
             <section class="container-fluid main__section" id="main__results">
                 <h2 id="section4">Results</h2>

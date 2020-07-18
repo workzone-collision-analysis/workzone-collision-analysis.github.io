@@ -28,9 +28,9 @@ body{
     width:100%;
     display:flex;
     padding-top:40px;
-    padding-left:50px;
     padding-right:10px;
     flex-direction: column;
+    margin-bottom:30px;
 }
 
 .main__section:last-child{
@@ -44,27 +44,19 @@ body{
 
 #main__cover-page{
     position:relative;
-    justify-content: center;
-    align-items:flex-start;
     flex-direction: column;
-    padding-right:50px;
     height:98vh;
+    justify-content: center;
 }
 
 #main__cover-page h1{
-    font-weight:700;
-    font-size: 50px;
     color:#212121;
-    line-height:70px;
-    margin-bottom:20px;
     text-align: start;
-    margin-top:200px;
 }
 
 
 #main__cover-page h4{
     font-weight:500;
-    font-size: 25px;
     color:#212121;
 }
 
@@ -78,7 +70,6 @@ body{
     display:flex;
     justify-content: space-between;
     margin-top:20px;
-    padding: 0 50px 0 50px;
     flex-wrap: wrap;
 }
 
