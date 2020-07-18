@@ -1,2 +1,3 @@
 # workzone-collision-analysis.github.io
-webpage for the capstone project
+This repository is for the capstone project website.
+(https://workzone-collision-analysis.github.io/)
