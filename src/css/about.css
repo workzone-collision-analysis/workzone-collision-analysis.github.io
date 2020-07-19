@@ -1,3 +1,7 @@
+#main__about{
+    border-top:1px dashed #969696;
+}
+
 #main__about p{
     margin-top:30px;
     font-size:20px;

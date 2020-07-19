@@ -1,0 +1,25 @@
+#main__methodology{
+    border-top:1px dashed #969696;
+}
+
+#main__methodology h3{
+    margin-top:50px;
+    font-size:30px;
+}
+
+#main__methodology p{
+    margin-top:30px;
+    font-size:20px;
+    line-height:30px;
+}
+
+#clustering__image{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    margin-top:30px;
+}
+
+#clustering__image img{
+    width:90%;
+}

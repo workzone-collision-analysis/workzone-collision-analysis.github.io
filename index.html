@@ -99,8 +99,7 @@
                         <h4>Dashboard</h4>
                     </div>
                 </div>
-                <p> Transportation authorities in NYC seek a better understanding of the type, severity, and extent of
-                    mobility impacts associated with work zones. This project proposes using a k-means clustering
+                <p> This project proposes using a k-means clustering
                     approach to predict the probability of a vehicle collision occurring in the proximity of a road
                     construction event (i.e work zone). The proposed clustering method is applied to over 20,000
                     construction and emergency construction events of relatively short duration in New York City to
@@ -115,36 +114,77 @@
                     datasets. The team did not have access to a single, unified data source that provided information
                     about the location and timing of construction work zones within NYC. Instead, the team brought
                     together disparate datasets to produce an approximation of work zone events and their attributes
-                    (road type, duration, etc.).</p>
+                    (road type, duration, etc.). The information below shows the sources and features taken from each
+                    dataset to produce a single dataset of construction events.</p>
                 <div class="row">
-                    <div class="col-8 col-sm-5 col-md-4 col-lg-3 data__column">
+                    <div class="col-8 col-sm-5 col-md-4 col-lg-4 data__column">
+                        <div class="data__column-icon">
+                            <img id="icon_511" src="src/image/511.png" alt="road construction">
+                        </div>
                         <h4>511 Events</h4>
-                        <span>Street Characteristic</span>
+                        <span>Geometry: Point</span>
+                        <ul class="data__column-attribute">
+                            <li>attr 1,</li>
+                            <li>attr 2,</li>
+                            <li>attr 3,</li>
+                            <li>attr 4,</li>
+                            <li>attr 5</li>
+                        </ul>
                     </div>
-                    <div class="col-8 col-sm-5 col-md-4 col-lg-3 data__column">
+                    <div class="col-8 col-sm-5 col-md-4 col-lg-4 data__column">
+                        <div class="data__column-icon">
+                            <img src="src/image/construction.png" alt="road construction">
+                        </div>
                         <h4>Street Closure</h4>
-                        <span>Street Characteristic</span>
+                        <span>Geometry: Line</span>
+                        <ul class="data__column-attribute">
+                            <li>attr 1,</li>
+                            <li>attr 2,</li>
+                            <li>attr 3,</li>
+                            <li>attr 4,</li>
+                            <li>attr 5</li>
+                        </ul>
                     </div>
-                    <div class="col-8 col-sm-5 col-md-4 col-lg-3 data__column">
+                    <div class="col-8 col-sm-5 col-md-4 col-lg-4 data__column">
+                        <div class="data__column-icon">
+                            <img id='crash_icon' src="src/image/crash_icon.png" alt="crash symbol">
+                        </div>
                         <h4>Crash</h4>
-                        <span>Street Characteristic</span>
+                        <span>Geometry: Point</span>
+                        <ul class="data__column-attribute">
+                            <li>attr 1,</li>
+                            <li>attr 2,</li>
+                            <li>attr 3,</li>
+                            <li>attr 4,</li>
+                            <li>attr 5</li>
+                        </ul>
                     </div>
-                    <div class="col-8 col-sm-5 col-md-4 col-lg-3 data__column">
+                    <div class="col-8 col-sm-5 col-md-4 col-lg-4 data__column">
+                        <div class="data__column-icon">
+                            <img src="src/image/lion.png" alt="crash symbol">
+                        </div>
                         <h4>LION</h4>
-                        <span>Street Characteristic</span>
-                    </div>
-                    <div class="col-8 col-sm-5 col-md-4 col-lg-3 data__column">
-                        <h4>Sharedstreet</h4>
-                        <span>Street Characteristic</span>
+                        <span>Geometry: Line</span>
+                        <ul class="data__column-attribute">
+                            <li>attr 1,</li>
+                            <li>attr 2,</li>
+                            <li>attr 3,</li>
+                            <li>attr 4,</li>
+                            <li>attr 5</li>
+                        </ul>
                     </div>
                 </div>
             </section>
             <section class="container-fluid main__section" id="main__methodology">
                 <h2 id="section3">Methodology</h2>
                 <div id="methodology__wrangling">
-
+                    <h3>Data Wrangling</h3>
                 </div>
                 <div id="methodology__clustering">
+                    <h3>Clustering</h3>
+                    <div id="clustering__image">
+                        <img src="src/image/cluster_method.png" alt="clustering">
+                    </div>
                     <p>With the spatial datasets wrangled into a common reference system, the team employed a k-means
                         clustering algorithm. This approach was selected to provide a predictive framework to understand
                         the probability of a crash occurring in the proximity of a work zone given certain
@@ -175,10 +215,10 @@
                             <span>John Collier</span>
                             <div class="team__link">
                                 <a href="https://www.linkedin.com/in/john-collier-6557115b/">
-                                    <img src="src/image/linkedin.png" alt="linkedin link">
+                                    <img alt="linkedin link" src="src/image/linkedin.png">
                                 </a>
                                 <a href="https://github.com/johncollier">
-                                    <img src="src/image/github.png" alt="github link">
+                                    <img alt="github link" src="src/image/github.png">
                                 </a>
                             </div>
                         </div>
@@ -188,10 +228,10 @@
                             <span>Seunggyun Han</span>
                             <div class="team__link">
                                 <a href="https://www.linkedin.com/in/seunggyunhancodes/">
-                                    <img src="src/image/linkedin.png" alt="linkedin link">
+                                    <img alt="linkedin link" src="src/image/linkedin.png">
                                 </a>
                                 <a href="https://github.com/Aete">
-                                    <img src="src/image/github.png" alt="github link">
+                                    <img alt="github link" src="src/image/github.png">
                                 </a>
                             </div>
                         </div>
@@ -201,10 +241,10 @@
                             <span>Linda Jabar</span>
                             <div class="team__link">
                                 <a href="https://www.linkedin.com/in/lindajaber/">
-                                    <img src="src/image/linkedin.png" alt="linkedin link">
+                                    <img alt="linkedin link" src="src/image/linkedin.png">
                                 </a>
                                 <a href="https://https://github.com/lindaJaber/">
-                                    <img src="src/image/github.png" alt="github link">
+                                    <img alt="github link" src="src/image/github.png">
                                 </a>
                             </div>
                         </div>
@@ -214,10 +254,10 @@
                             <span>Akhil Singh</span>
                             <div class="team__link">
                                 <a href="https://www.linkedin.com/in/akhil-k-singh/">
-                                    <img src="src/image/linkedin.png" alt="linkedin link">
+                                    <img alt="linkedin link" src="src/image/linkedin.png">
                                 </a>
                                 <a href="https://github.com/akhilksingh">
-                                    <img src="src/image/github.png" alt="github link">
+                                    <img alt="github link" src="src/image/github.png">
                                 </a>
                             </div>
                         </div>
@@ -230,7 +270,7 @@
                             <span>Kaan Ozbay</span>
                             <div class="team__link">
                                 <a href="https://www.linkedin.com/in/kaan-ozbay-4805413/">
-                                    <img class="linkedin" src="src/image/linkedin.png" alt="linkedin link">
+                                    <img alt="linkedin link" class="linkedin" src="src/image/linkedin.png">
                                 </a>
                             </div>
                         </div>
