@@ -52,6 +52,11 @@ nav .nav-item{
     font-weight:700;
 }
 
+.nav-subsection{
+    font-size:15px;
+    margin-left:15px;
+}
+
 #nav_fix-top{
     position:fixed;
     top:0;
