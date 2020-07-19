@@ -34,8 +34,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#main__methodology">Methodology</a>
                     <ul>
-                        <li><a class="nav-link nav-subsection" href="#main__methodology">Data Wrangling</a></li>
-                        <li><a class="nav-link nav-subsection" href="#main__methodology">Clustering</a></li>
+                        <li><a class="nav-link nav-subsection" href="#methodology__wrangling">Data Wrangling</a></li>
+                        <li><a class="nav-link nav-subsection" href="#methodology__clustering">Clustering</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -119,7 +119,7 @@
                 <div class="row">
                     <div class="col-8 col-sm-5 col-md-4 col-lg-4 data__column">
                         <div class="data__column-icon">
-                            <img id="icon_511" src="src/image/511.png" alt="road construction">
+                            <img alt="road construction" id="icon_511" src="src/image/511.png">
                         </div>
                         <h4>511 Events</h4>
                         <span>Geometry: Point</span>
@@ -133,7 +133,7 @@
                     </div>
                     <div class="col-8 col-sm-5 col-md-4 col-lg-4 data__column">
                         <div class="data__column-icon">
-                            <img src="src/image/construction.png" alt="road construction">
+                            <img alt="road construction" src="src/image/construction.png">
                         </div>
                         <h4>Street Closure</h4>
                         <span>Geometry: Line</span>
@@ -147,7 +147,7 @@
                     </div>
                     <div class="col-8 col-sm-5 col-md-4 col-lg-4 data__column">
                         <div class="data__column-icon">
-                            <img id='crash_icon' src="src/image/crash_icon.png" alt="crash symbol">
+                            <img alt="crash symbol" id='crash_icon' src="src/image/crash_icon.png">
                         </div>
                         <h4>Crash</h4>
                         <span>Geometry: Point</span>
@@ -161,7 +161,7 @@
                     </div>
                     <div class="col-8 col-sm-5 col-md-4 col-lg-4 data__column">
                         <div class="data__column-icon">
-                            <img src="src/image/lion.png" alt="crash symbol">
+                            <img alt="crash symbol" src="src/image/lion.png">
                         </div>
                         <h4>LION</h4>
                         <span>Geometry: Line</span>
@@ -179,11 +179,19 @@
                 <h2 id="section3">Methodology</h2>
                 <div id="methodology__wrangling">
                     <h3>Data Wrangling</h3>
+                    <p>Before the clustering algorithm could be deployed, the datasets noted above needed to be brought
+                        into a common reference system. To achieve this, the team utilized the SharedStreets API.
+                        SharedStreets provides its own street network system (street segments and intersections) as well
+                        as tools to handle points and line geometry with more accuracy like snapping of points to
+                        nearest SharedStreets segment, which proved to be helpful in mapping inaccurate crash and WZ
+                        location data. Each record in the LION, collisions and 511 datasets were assigned a
+                        ‘SharedStreets geometry id’. Based on this SharedStreets ID, characteristics of streets,
+                        collisions, and work zones were linked together. </p>
                 </div>
                 <div id="methodology__clustering">
                     <h3>Clustering</h3>
                     <div id="clustering__image">
-                        <img src="src/image/cluster_method.png" alt="clustering">
+                        <img alt="clustering" src="src/image/cluster_method.png">
                     </div>
                     <p>With the spatial datasets wrangled into a common reference system, the team employed a k-means
                         clustering algorithm. This approach was selected to provide a predictive framework to understand
@@ -192,6 +200,10 @@
                         “cohorts” of work zones and identify work zones that may have a higher crash probability. The
                         results of this methodology can serve to provide transportation authorities and the capstone
                         sponsor with more information about work zone related safety hazards.</p>
+                    <p>The following features were developed for each work zone record and normalized before applying
+                        the clustering algorithm. Two separate clustering attempts were made – one with a larger dataset
+                        that did not contain a length attribute and one smaller subset of records that were able to be
+                        matched to permit data that contained a length attribute. </p>
                 </div>
             </section>
             <section class="container-fluid main__section" id="main__results">
