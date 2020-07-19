@@ -17,7 +17,7 @@
 <div class="container-fluid">
     <div class="row" id="body__row">
         <div id="nav_fix-top">
-            <img src="src/image/nav.png" alt="navigation-icon" onclick="nav_show()" id="nav__open-btn">
+            <img alt="navigation-icon" id="nav__open-btn" onclick="nav_show()" src="src/image/nav.png">
             <button id="nav__close-btn" onclick="nav_close()">Close</button>
         </div>
         <nav class="col-md-3 col-lg-3" id="sidebar">
@@ -46,7 +46,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#main__about">About</a>
+                    <a class="nav-link" href="#main__about">Team</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://github.com/workzone-collision-analysis/capstone" target="_blank">Github</a>
@@ -64,8 +64,6 @@
                 </div>
                 <h1>Interagency Work Zone<br> Traffic Data Modeling and Analysis </h1>
                 <h4>NYU CUSP Capstone project 2020</h4>
-                <img alt="cover page illustration" id='cover' src="src/image/cover.png">
-
 
             </section>
             <section class="container-fluid main__section" id="main__overview">
@@ -113,6 +111,11 @@
             </section>
             <section class="container-fluid main__section" id="main__data">
                 <h2>Project Data</h2>
+                <p>This project is unique in that all data sources used in this research are publicly available
+                    datasets. The team did not have access to a single, unified data source that provided information
+                    about the location and timing of construction work zones within NYC. Instead, the team brought
+                    together disparate datasets to produce an approximation of work zone events and their attributes
+                    (road type, duration, etc.).</p>
                 <div class="row">
                     <div class="col-8 col-sm-5 col-md-4 col-lg-3 data__column">
                         <h4>511 Events</h4>
@@ -135,18 +138,6 @@
                         <span>Street Characteristic</span>
                     </div>
                 </div>
-                <p>This project is unique in that all data sources used in this research are publicly available
-                    datasets. The team did not have access to a single, unified data source that provided information
-                    about the location and timing of construction work zones within NYC. Instead, the team brought
-                    together disparate datasets to produce an approximation of work zone events and their attributes
-                    (road type, duration, etc.). The diagram below shows the features taken from each dataset to produce
-                    a single dataset of construction events of a relatively short duration.</p>
-
-                <p>To derive the crashes that occurred in the proximity of each work zone the team used data available
-                    from the NYC Open Data portal on NYPD Automobile Collisions. This dataset provides the location and
-                    time of all automobile accidents as reported by the NYPD. These crashes are geocoded to a
-                    latitude/longitude and provide information about the street and/or cross street where the crash
-                    occurred. </p>
             </section>
             <section class="container-fluid main__section" id="main__methodology">
                 <h2 id="section3">Methodology</h2>
@@ -166,15 +157,90 @@
             <section class="container-fluid main__section" id="main__results">
                 <h2 id="section4">Results</h2>
                 <div id="results__dashboard">
-                    <iframe src = "https://workzone-collision-analysis.github.io/capstone/dashboard/"></iframe>
+                    <iframe src="https://workzone-collision-analysis.github.io/capstone/dashboard/"></iframe>
                 </div>
                 <div id="results__app">
 
                 </div>
             </section>
             <section class="container-fluid main__section" id="main__about">
-                <h2>About</h2>
-
+                <h2>Team</h2>
+                <p>This project was completed as part of the 2020 Capstone process for the Center for Urban Science and
+                    Progress (CUSP) at NYU. The team would like to thank capstone sponsor HDR and their partners for
+                    their help in the execution of this research. </p>
+                <h3>Student Team</h3>
+                <ul class="team__student">
+                    <li class="student__column">
+                        <div class="student__circle">
+                            <span>John Collier</span>
+                            <div class="team__link">
+                                <a href="https://www.linkedin.com/in/john-collier-6557115b/">
+                                    <img src="src/image/linkedin.png" alt="linkedin link">
+                                </a>
+                                <a href="https://github.com/johncollier">
+                                    <img src="src/image/github.png" alt="github link">
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="student__column">
+                        <div class="student__circle">
+                            <span>Seunggyun Han</span>
+                            <div class="team__link">
+                                <a href="https://www.linkedin.com/in/seunggyunhancodes/">
+                                    <img src="src/image/linkedin.png" alt="linkedin link">
+                                </a>
+                                <a href="https://github.com/Aete">
+                                    <img src="src/image/github.png" alt="github link">
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="student__column">
+                        <div class="student__circle">
+                            <span>Linda Jabar</span>
+                            <div class="team__link">
+                                <a href="https://www.linkedin.com/in/lindajaber/">
+                                    <img src="src/image/linkedin.png" alt="linkedin link">
+                                </a>
+                                <a href="https://https://github.com/lindaJaber/">
+                                    <img src="src/image/github.png" alt="github link">
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="student__column">
+                        <div class="student__circle">
+                            <span>Akhil Singh</span>
+                            <div class="team__link">
+                                <a href="https://www.linkedin.com/in/akhil-k-singh/">
+                                    <img src="src/image/linkedin.png" alt="linkedin link">
+                                </a>
+                                <a href="https://github.com/akhilksingh">
+                                    <img src="src/image/github.png" alt="github link">
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <h3>Mentors</h3>
+                <ul class="team__mentor">
+                    <li class="mentor__column">
+                        <div class="mentor__circle">
+                            <span>Kaan Ozbay</span>
+                            <div class="team__link">
+                                <a href="https://www.linkedin.com/in/kaan-ozbay-4805413/">
+                                    <img class="linkedin" src="src/image/linkedin.png" alt="linkedin link">
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mentor__column">
+                        <div class="mentor__circle">
+                            <span>Junaid Khan</span>
+                        </div>
+                    </li>
+                </ul>
             </section>
         </main>
     </div>

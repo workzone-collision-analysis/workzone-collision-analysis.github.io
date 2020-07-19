@@ -31,10 +31,6 @@ body{
     padding-bottom:60px;
 }
 
-.main__section:last-child{
-    min-height:30%;
-}
-
 .main__section h2{
     font-size:40px;
     font-weight:700;
