@@ -47,6 +47,10 @@
     #clustering_img_mobile{
         display:none;
     }
+
+    #main__overview h1{
+        margin-top:50px;
+    }
 }
 
 @media screen and (max-width:991px){
@@ -94,6 +98,10 @@
     #clustering_img_mobile{
         display:none;
     }
+
+    #main__overview h1{
+        margin-top:50px;
+    }
 }
 
 @media screen and (min-width:451px) and(max-width:991px){
@@ -111,6 +119,10 @@
 
     .methodology__image img{
         width:90%;
+    }
+
+    #main__overview h1{
+        margin-top:50px;
     }
 }
 
@@ -132,5 +144,9 @@
     }
     .methodology__image img{
         width:90%;
+    }
+
+    #main__overview h1{
+        margin-top:200px;
     }
 }
