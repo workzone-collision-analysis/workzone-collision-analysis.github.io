@@ -37,6 +37,10 @@
     #cover{
         display:block;
     }
+
+    .methodology__image img{
+        width:95%;
+    }
 }
 
 @media screen and (max-width:991px){
@@ -73,6 +77,10 @@
 
     #nav_fix-top{
         display:flex;
+    }
+
+    .methodology__image img{
+        width:95%;
     }
 }
 

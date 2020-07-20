@@ -128,8 +128,8 @@
                         <h4>511 Events</h4>
                         <span>Geometry: Point</span>
                         <ul class="data__column-attribute">
-                            <li>Location, </li>
-                            <li>Duration, </li>
+                            <li>Location,</li>
+                            <li>Duration,</li>
                             <li>Season</li>
                         </ul>
                     </div>
@@ -139,7 +139,7 @@
                         </div>
                         <h4>Street Closure</h4>
                         <span>Geometry: Line</span>
-                        <ul class="data__column-attribute", id="sc__attr">
+                        <ul , class="data__column-attribute" id="sc__attr">
                             <li>Length</li>
                         </ul>
                     </div>
@@ -160,8 +160,8 @@
                         <h4>LION</h4>
                         <span>Geometry: Line</span>
                         <ul class="data__column-attribute">
-                            <li>Roadway type, </li>
-                            <li>Street width, </li>
+                            <li>Roadway type,</li>
+                            <li>Street width,</li>
                             <li>Posted speed</li>
                         </ul>
                     </div>
@@ -171,31 +171,34 @@
                 <h2 id="section3">Methodology</h2>
                 <div id="methodology__wrangling">
                     <h3>Data Wrangling</h3>
-                    <p>Before the clustering algorithm could be deployed, the datasets noted above needed to be brought
-                        into a common reference system. To achieve this, the team utilized the SharedStreets API.
-                        SharedStreets provides its own street network system (street segments and intersections) as well
-                        as tools to handle points and line geometry with more accuracy like snapping of points to
-                        nearest SharedStreets segment, which proved to be helpful in mapping inaccurate crash and WZ
-                        location data. Each record in the LION, collisions and 511 datasets were assigned a
-                        ‘SharedStreets geometry id’. Based on this SharedStreets ID, characteristics of streets,
-                        collisions, and work zones were linked together. </p>
+                    <p>The data sources were produced by various entities and used different geometric representations.
+                        Therefore, there was a need for a standardized street network onto which data sets, namely LION,
+                        crashes, and work zones, could be joined. SharedStreets – a tool that creates a shared reference
+                        system for disparate street networks – provided a solution to connect the data. Each record in
+                        the LION, collisions and WZ data was assigned a ‘SharedStreets geometry id’. Based on this id,
+                        characteristics of streets, collisions, and work zones were linked. The data was filtered to
+                        include only durations less than 24 hours, and number of crashes happening within 900 feet of a
+                        work zone was calculated. Then the Street Closures data was joined to get the length attribute
+                        in feet. </p>
+                    <div class="methodology__image">
+                        <img alt="flow chart of the project" src="src/image/flowchart.png">
+                    </div>
+
                 </div>
                 <div id="methodology__clustering">
                     <h3>Clustering</h3>
-                    <div id="clustering__image">
-                        <img alt="clustering" src="src/image/cluster_method.png">
-                    </div>
                     <p>With the spatial datasets wrangled into a common reference system, the team employed a k-means
                         clustering algorithm. This approach was selected to provide a predictive framework to understand
                         the probability of a crash occurring in the proximity of a work zone given certain
                         characteristics. The clustering approach also provides the opportunity to identify different
-                        “cohorts” of work zones and identify work zones that may have a higher crash probability. The
-                        results of this methodology can serve to provide transportation authorities and the capstone
-                        sponsor with more information about work zone related safety hazards.</p>
-                    <p>The following features were developed for each work zone record and normalized before applying
-                        the clustering algorithm. Two separate clustering attempts were made – one with a larger dataset
-                        that did not contain a length attribute and one smaller subset of records that were able to be
-                        matched to permit data that contained a length attribute. </p>
+                        “cohorts” of work zones and identify work zones that may have a higher crash probability. Two
+                        separate clustering attempts were made – one with a larger dataset that did not contain a length
+                        attribute and one smaller subset of records that were able to be matched to permit data that
+                        contained a length attribute. The collision probability was then calculated by dividing the
+                        number of WZs witnessing a crash by the total number of WZs for each cluster. </p>
+                    <div class="methodology__image">
+                        <img alt="clustering" src="src/image/cluster_method.png">
+                    </div>
                 </div>
             </section>
             <section class="container-fluid main__section" id="main__results">
