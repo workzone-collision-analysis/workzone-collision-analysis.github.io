@@ -1,6 +1,7 @@
 @media screen and (min-width:991px){
     #sidebar{
         display:flex;
+        padding-top:50px;
     }
 
     #nav_fix-top{
@@ -56,6 +57,7 @@
 @media screen and (max-width:991px){
     #sidebar{
         display:none;
+        padding-top:100px;
     }
     .main__section{
         border-left:none;
