@@ -3,13 +3,25 @@
     border-top:1px dashed #969696;
 }
 
+#main__results h3{
+    margin-top:30px;
+    font-size:30px;
+}
+
+#main__results p{
+    margin-top:20px;
+    font-size:20px;
+    line-height:30px;
+}
+
 #results__dashboard{
     width: 100%;
     height:100%;
 }
 #results__dashboard iframe{
+    margin-top:20px;
     width: 100%;
     padding:20px;
-    height:100vh;
+    height:90vh;
     padding:0;
 }
