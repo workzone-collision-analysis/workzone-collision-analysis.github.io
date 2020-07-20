@@ -41,6 +41,12 @@
     .methodology__image img{
         width:95%;
     }
+    #clustering_img{
+        display:block;
+    }
+    #clustering_img_mobile{
+        display:none;
+    }
 }
 
 @media screen and (max-width:991px){
@@ -80,7 +86,13 @@
     }
 
     .methodology__image img{
-        width:95%;
+        width:90%;
+    }
+    #clustering_img{
+        display:block;
+    }
+    #clustering_img_mobile{
+        display:none;
     }
 }
 
@@ -89,6 +101,16 @@
         border-left:none;
         padding-top: 20px;
         padding-bottom:20px;
+    }
+    #clustering_img{
+        display:block;
+    }
+    #clustering_img_mobile{
+        display:none;
+    }
+
+    .methodology__image img{
+        width:90%;
     }
 }
 
@@ -101,5 +123,14 @@
     #main{
         padding-right:0;
         padding-left:0;
+    }
+    #clustering_img{
+        display:none;
+    }
+    #clustering_img_mobile{
+        display:block;
+    }
+    .methodology__image img{
+        width:90%;
     }
 }
