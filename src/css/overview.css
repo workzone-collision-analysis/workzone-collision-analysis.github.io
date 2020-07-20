@@ -13,6 +13,10 @@
     margin-bottom:30px;
 }
 
+#main__overview h3#problemState{
+    margin-top:100px;
+}
+
 #main__overview h1{
     margin-top:50px;
     font-size:45px;
@@ -20,7 +24,7 @@
     font-style:italic;
     text-align: center;
     font-weight:600;
-    margin-bottom:50px;
+    margin-bottom:100px;
 }
 
 
