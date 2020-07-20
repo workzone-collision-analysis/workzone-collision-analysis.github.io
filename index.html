@@ -118,8 +118,8 @@
                     datasets. The team did not have access to a single, unified data source that provided information
                     about the location and timing of construction work zones within NYC. Instead, the team brought
                     together disparate datasets to produce an approximation of work zone events and their attributes
-                    (road type, duration, etc.). The information below shows the sources and features taken from each
-                    dataset to produce a single dataset of construction events.</p>
+                    (road type, duration, length, etc.). The information below shows the sources and features taken from
+                    each dataset to produce a single dataset of construction events. </p>
                 <div class="row">
                     <div class="col-8 col-sm-5 col-md-4 col-lg-4 data__column">
                         <div class="data__column-icon">
@@ -128,11 +128,9 @@
                         <h4>511 Events</h4>
                         <span>Geometry: Point</span>
                         <ul class="data__column-attribute">
-                            <li>attr 1,</li>
-                            <li>attr 2,</li>
-                            <li>attr 3,</li>
-                            <li>attr 4,</li>
-                            <li>attr 5</li>
+                            <li>Location, </li>
+                            <li>Duration, </li>
+                            <li>Season</li>
                         </ul>
                     </div>
                     <div class="col-8 col-sm-5 col-md-4 col-lg-4 data__column">
@@ -141,12 +139,8 @@
                         </div>
                         <h4>Street Closure</h4>
                         <span>Geometry: Line</span>
-                        <ul class="data__column-attribute">
-                            <li>attr 1,</li>
-                            <li>attr 2,</li>
-                            <li>attr 3,</li>
-                            <li>attr 4,</li>
-                            <li>attr 5</li>
+                        <ul class="data__column-attribute", id="sc__attr">
+                            <li>Length</li>
                         </ul>
                     </div>
                     <div class="col-8 col-sm-5 col-md-4 col-lg-4 data__column">
@@ -155,12 +149,8 @@
                         </div>
                         <h4>Crash</h4>
                         <span>Geometry: Point</span>
-                        <ul class="data__column-attribute">
-                            <li>attr 1,</li>
-                            <li>attr 2,</li>
-                            <li>attr 3,</li>
-                            <li>attr 4,</li>
-                            <li>attr 5</li>
+                        <ul class="data__column-attribute" id="crash__attr">
+                            <li>Number of crashes</li>
                         </ul>
                     </div>
                     <div class="col-8 col-sm-5 col-md-4 col-lg-4 data__column">
@@ -170,11 +160,9 @@
                         <h4>LION</h4>
                         <span>Geometry: Line</span>
                         <ul class="data__column-attribute">
-                            <li>attr 1,</li>
-                            <li>attr 2,</li>
-                            <li>attr 3,</li>
-                            <li>attr 4,</li>
-                            <li>attr 5</li>
+                            <li>Roadway type, </li>
+                            <li>Street width, </li>
+                            <li>Posted speed</li>
                         </ul>
                     </div>
                 </div>

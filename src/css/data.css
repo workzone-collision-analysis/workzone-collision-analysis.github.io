@@ -36,6 +36,15 @@
     display:inline-block;
 }
 
+#crash__attr li{
+    margin-right:0;
+}
+
+#sc__attr li{
+    margin-right:0;
+}
+
+
 .data__column-icon{
     margin:20px 0;
     width:150px;
