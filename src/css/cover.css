@@ -1,0 +1,44 @@
+#main__cover-page {
+  position: relative;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+}
+
+#main__cover-page h1 {
+  width: 100%;
+  color: #212121;
+  text-align: start;
+}
+
+#main__cover-page h4 {
+  font-weight: 500;
+  color: #212121;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#main__cover-page #logos {
+  height: 30px;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  padding: 0 20px 0 20px;
+}
+
+#logos img {
+  max-height: 30px;
+  margin-bottom: 20px;
+}
+
+#cover {
+  width: 100%;
+  margin-top: 180px;
+  opacity: 0.5;
+}

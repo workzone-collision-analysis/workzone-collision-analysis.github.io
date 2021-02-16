@@ -1,310 +1,427 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-          name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <title>Interagency Work Zone Traffic Data Modeling and Analysis </title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      name="viewport"
+    />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+    <title>Interagency Work Zone Traffic Data Modeling and Analysis</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="src/js/bootstrap.min.js"></script>
     <script src="src/js/bootstrap.bundle.min.js"></script>
-    <link href="src/css/bootstrap-grid.min.css" rel="stylesheet">
-    <link href="src/css/bootstrap.min.css" rel="stylesheet">
-    <link href="src/css/main.css" rel="stylesheet">
-</head>
-<body data-offset="150" data-spy="scroll" data-target="#sidebar">
-<div class="container-fluid">
-    <div class="row" id="body__row">
-        <div id="nav_fix-top">
+    <link href="src/css/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="src/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="src/css/main.css" rel="stylesheet" />
+  </head>
+  <body data-offset="150" data-spy="scroll" data-target="#sidebar">
+    <div class="container-fluid">
+      <div class="row" id="body__row">
+        <!-- <div id="nav_fix-top">
             <img alt="navigation-icon" id="nav__open-btn" onclick="nav_show()" src="src/image/nav.png">
             <button id="nav__close-btn" onclick="nav_close()">Close</button>
-        </div>
+        </div> -->
         <nav class="col-md-3 col-lg-3" id="sidebar">
-            <ul class="nav__content-wrapper nav__main">
-                <li class="nav-item">
-                    <a class="nav-link .active" href="#main__cover-page" id="nav__home-btn">Home</a>
+          <ul class="nav__content-wrapper nav__main">
+            <li class="nav-item">
+              <a
+                class="nav-link .active"
+                href="#main__cover-page"
+                id="nav__home-btn"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#main__overview">Overview</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#main__data">Project Data</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#main__methodology">Methodology</a>
+              <ul>
+                <li>
+                  <a
+                    class="nav-link nav-subsection"
+                    href="#methodology__wrangling"
+                    >Data Wrangling</a
+                  >
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#main__overview">Overview</a>
+                <li>
+                  <a
+                    class="nav-link nav-subsection"
+                    href="#methodology__clustering"
+                    >Clustering</a
+                  >
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#main__data">Project Data</a>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#main__results">Results</a>
+              <ul>
+                <li>
+                  <a class="nav-link nav-subsection" href="#results__dashboard"
+                    >Dashboard</a
+                  >
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#main__methodology">Methodology</a>
-                    <ul>
-                        <li><a class="nav-link nav-subsection" href="#methodology__wrangling">Data Wrangling</a></li>
-                        <li><a class="nav-link nav-subsection" href="#methodology__clustering">Clustering</a></li>
-                    </ul>
+                <li>
+                  <a
+                    class="nav-link nav-subsection"
+                    href="#results__predictive"
+                    target="_blank"
+                    >Web application</a
+                  >
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#main__results">Results</a>
-                    <ul>
-                        <li><a class="nav-link nav-subsection" href="#results__dashboard">Dashboard</a></li>
-                        <li><a class="nav-link nav-subsection" href="https://workzone-collision-predict.herokuapp.com/"
-                               target="_blank">Web
-                            application</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#main__about">Team</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/workzone-collision-analysis/capstone" target="_blank">Github</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="report_download" download="report.pdf" href="src/report.pdf">Report</a>
-                </li>
-            </ul>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#main__about">Team</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://github.com/workzone-collision-analysis/capstone"
+                target="_blank"
+                >Github</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="report_download"
+                download="report.pdf"
+                href="src/report.pdf"
+                >Report</a
+              >
+            </li>
+          </ul>
         </nav>
         <main class="col-md-12 col-lg-9 ml-sm-auto" id="main">
-            <section class="container-fluid main__section" id="main__cover-page">
-                <div id="logos">
-                    <img alt="NYU CUSP LOGO" src="src/image/cusp.png">
-                    <img alt="HDR" src="src/image/hdr.png">
-                </div>
-                <h1>Interagency Work Zone<br> Traffic Data Modeling and Analysis </h1>
-                <h4>NYU | Center for Urban Science and Progress</h4>
-                <h4>Capstone Project | 2020 </h4>
+          <section class="container-fluid main__section" id="main__cover-page">
+            <div id="logos">
+              <img alt="NYU CUSP LOGO" src="src/image/cusp.png" />
+              <img alt="HDR" src="src/image/hdr.png" />
+            </div>
+            <h1>
+              Interagency Work Zone<br />
+              Traffic Data Modeling and Analysis
+            </h1>
+            <h4>NYU | Center for Urban Science and Progress</h4>
+            <h4>Capstone Project | 2020</h4>
+          </section>
+          <section class="container-fluid main__section" id="main__overview">
+            <h2>Overview</h2>
+            <h3>Background</h3>
+            <p>
+              Road construction events are a necessary part of keeping road
+              infrastructure in good condition but can pose significant safety
+              problems when implemented. Temporary work zones for roadway
+              constructions have the potential to significantly impact mobility
+              and safety for all roadway users. An increase in the number of
+              people using local streets because of work zone diversion plans
+              may increase the likelihood of crashes, including crashes
+              involving vulnerable populations (e.g., cyclists, seniors, and
+              individuals with disabilities). To aid transportation authorities
+              in the city of New York better understand the extent of mobility
+              impacts associated with work zones, we propose a clustering
+              approach to predict the probability of a vehicle collision
+              occurring in the proximity of a road construction event (i.e. work
+              zone).
+            </p>
+            <h3 id="problemState">Problem Statement</h3>
+            <div>
+              <h1>
+                Can we use characteristics of streets and roadway construction
+                events to predict collision probability in future work zones?
+              </h1>
+            </div>
 
-            </section>
-            <section class="container-fluid main__section" id="main__overview">
-                <h2>Overview</h2>
-                <h3>Background</h3>
-                <p>Road construction events are a necessary part of keeping road infrastructure in good condition but
-                    can pose significant safety problems when implemented. Temporary work zones for roadway
-                    constructions have the potential to significantly impact mobility and safety for all roadway users.
-                    An increase in the number of people using local streets because of work zone diversion plans may
-                    increase the likelihood of crashes, including crashes involving vulnerable populations (e.g.,
-                    cyclists, seniors, and individuals with disabilities). To aid transportation authorities in the city
-                    of New York better understand the extent of mobility impacts associated with work zones, we propose
-                    a clustering approach to predict the probability of a vehicle collision occurring in the proximity
-                    of a road construction event (i.e. work zone). </p>
-                <h3 id="problemState">Problem Statement</h3>
-                <div>
-                    <h1>Can we use characteristics of streets and roadway construction events to predict collision
-                        probability in future work zones? </h1>
+            <h3>Scope</h3>
+            <div class="row">
+              <div class="col-8 col-sm-5 col-md-4 col-lg-4 scope__column">
+                <img alt="Dataset Diagram" src="src/image/database.png" />
+                <h4>Data Wrangling</h4>
+              </div>
+              <div class="col-8 col-sm-5 col-md-4 col-lg-4 scope__column">
+                <img alt="Clustering Diagram" src="src/image/clustering.png" />
+                <h4>Clustering</h4>
+              </div>
+              <div class="col-8 col-sm-5 col-md-4 col-lg-4 scope__column">
+                <img alt="Dashboard Diagram" src="src/image/dashboard.png" />
+                <h4>Dashboard</h4>
+              </div>
+              <div class="col-8 col-sm-5 col-md-4 col-lg-4 scope__column">
+                <img alt="Dashboard Diagram" src="src/image/webapp.png" />
+                <h4>Predictive Application</h4>
+              </div>
+            </div>
+            <p>
+              This project proposes using a k-means clustering approach to
+              predict the probability of a vehicle collision occurring in the
+              proximity of a work zone. The proposed clustering method is
+              applied to over 20,000 construction and emergency construction
+              events of relatively short duration in New York City to identify
+              types of work zones that may present greater safety risks. The
+              results of this project enables practitioners to employ
+              appropriate mitigation strategies during project programming and
+              develop effective transportation management plans.
+            </p>
+          </section>
+          <section class="container-fluid main__section" id="main__data">
+            <h2>Project Data</h2>
+            <p>
+              This project is unique in that all data sources used in this
+              research are publicly available datasets. The team did not have
+              access to a single, unified data source that provided information
+              about the location and timing of construction work zones within
+              NYC. Instead, the team brought together disparate datasets to
+              produce an approximation of work zone events and their attributes
+              (road type, duration, length, etc.). The information below shows
+              the sources and features taken from each dataset to produce a
+              single dataset of construction events.
+            </p>
+            <div class="row">
+              <div class="col-8 col-sm-5 col-md-4 col-lg-4 data__column">
+                <div class="data__column-icon">
+                  <img
+                    alt="road construction"
+                    id="icon_511"
+                    src="src/image/511.png"
+                  />
                 </div>
-
-                <h3>Scope</h3>
-                <div class="row">
-                    <div class="col-8 col-sm-5 col-md-4 col-lg-4 scope__column">
-                        <img alt="Dataset Diagram" src="src/image/database.png">
-                        <h4>Data Wrangling</h4>
-                    </div>
-                    <div class="col-8 col-sm-5 col-md-4 col-lg-4 scope__column">
-                        <img alt="Clustering Diagram" src="src/image/clustering.png">
-                        <h4>Clustering</h4>
-                    </div>
-                    <div class="col-8 col-sm-5 col-md-4 col-lg-4 scope__column">
-                        <img alt="Dashboard Diagram" src="src/image/dashboard.png">
-                        <h4>Dashboard</h4>
-                    </div>
-                    <div class="col-8 col-sm-5 col-md-4 col-lg-4 scope__column">
-                        <img alt="Dashboard Diagram" src="src/image/webapp.png">
-                        <h4>Predictive Web Application</h4>
-                    </div>
-                </div>
-                <p>This project proposes using a k-means clustering approach to predict the probability of a vehicle
-                    collision occurring in the proximity of a work zone. The proposed clustering method is applied to
-                    over 20,000 construction and emergency construction events of relatively short duration in New York
-                    City to identify types of work zones that may present greater safety risks. The results of this
-                    project enables practitioners to employ appropriate mitigation strategies during project programming
-                    and develop effective transportation management plans. </p>
-
-            </section>
-            <section class="container-fluid main__section" id="main__data">
-                <h2>Project Data</h2>
-                <p>This project is unique in that all data sources used in this research are publicly available
-                    datasets. The team did not have access to a single, unified data source that provided information
-                    about the location and timing of construction work zones within NYC. Instead, the team brought
-                    together disparate datasets to produce an approximation of work zone events and their attributes
-                    (road type, duration, length, etc.). The information below shows the sources and features taken from
-                    each dataset to produce a single dataset of construction events. </p>
-                <div class="row">
-                    <div class="col-8 col-sm-5 col-md-4 col-lg-4 data__column">
-                        <div class="data__column-icon">
-                            <img alt="road construction" id="icon_511" src="src/image/511.png">
-                        </div>
-                        <h4>511 Events</h4>
-                        <span>Geometry: Point</span>
-                        <ul class="data__column-attribute">
-                            <li>Location,</li>
-                            <li>Duration,</li>
-                            <li>Season</li>
-                        </ul>
-                    </div>
-                    <div class="col-8 col-sm-5 col-md-4 col-lg-4 data__column">
-                        <div class="data__column-icon">
-                            <img alt="road construction" src="src/image/construction.png">
-                        </div>
-                        <h4>Street Closure</h4>
-                        <span>Geometry: Line</span>
-                        <ul class="data__column-attribute" id="sc__attr">
-                            <li>Length</li>
-                        </ul>
-                    </div>
-                    <div class="col-8 col-sm-5 col-md-4 col-lg-4 data__column">
-                        <div class="data__column-icon">
-                            <img alt="crash symbol" id='crash_icon' src="src/image/crash_icon.png">
-                        </div>
-                        <h4>Crash</h4>
-                        <span>Geometry: Point</span>
-                        <ul class="data__column-attribute" id="crash__attr">
-                            <li>Number of crashes</li>
-                        </ul>
-                    </div>
-                    <div class="col-8 col-sm-5 col-md-4 col-lg-4 data__column">
-                        <div class="data__column-icon">
-                            <img alt="crash symbol" src="src/image/lion.png">
-                        </div>
-                        <h4>LION</h4>
-                        <span>Geometry: Line</span>
-                        <ul class="data__column-attribute">
-                            <li>Roadway type,</li>
-                            <li>Street width,</li>
-                            <li>Posted speed</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <section class="container-fluid main__section" id="main__methodology">
-                <h2 id="section3">Methodology</h2>
-                <div id="methodology__wrangling">
-                    <h3>Data Wrangling</h3>
-                    <p>The data sources were produced by various entities and used different geometric representations.
-                        Therefore, there was a need for a standardized street network onto which data sets, namely LION,
-                        crashes, and work zones, could be joined. SharedStreets – a tool that creates a shared reference
-                        system for disparate street networks – provided a solution to connect the data. Each record in
-                        the LION, collisions and WZ data was assigned a ‘SharedStreets geometry id’. Based on this id,
-                        characteristics of streets, collisions, and work zones were linked. The data was filtered to
-                        include only durations less than 24 hours, and number of crashes happening within 900 feet of a
-                        work zone was calculated. Then the Street Closures data was joined to get the length attribute
-                        in feet. </p>
-                    <div class="methodology__image">
-                        <img alt="flow chart of the project" src="src/image/flowchart.png">
-                    </div>
-
-                </div>
-                <div id="methodology__clustering">
-                    <h3>Clustering</h3>
-                    <p>With the spatial datasets wrangled into a common reference system, the team employed a k-means
-                        clustering algorithm. This approach was selected to provide a predictive framework to understand
-                        the probability of a crash occurring in the proximity of a work zone given certain
-                        characteristics. The clustering approach also provides the opportunity to identify different
-                        “cohorts” of work zones and identify work zones that may have a higher crash probability. Two
-                        separate clustering attempts were made – one with a larger dataset that did not contain a length
-                        attribute and one smaller subset of records that were able to be matched to permit data that
-                        contained a length attribute. The collision probability was then calculated by dividing the
-                        number of WZs witnessing a crash by the total number of WZs for each cluster. </p>
-                    <div class="methodology__image">
-                        <img id='clustering_img' alt="clustering" src="src/image/cluster_method.png">
-                        <img id='clustering_img_mobile' alt="clustering" src="src/image/cluster_method_mobile.png">
-                    </div>
-                </div>
-            </section>
-            <section class="container-fluid main__section" id="main__results">
-                <h2 id="section4">Results</h2>
-                <h3>Clustering</h3>
-                <p>The silhouette analysis was used to choose an optimal value for the number of clusters k=4. The
-                    predicted probability (using the train set) of a crash happening in each of the four clusters is
-                    16%, 13%, 14%, and 16% respectively.
-                    <a href="https://workzone-collision-analysis.github.io/capstone/dashboard/" target="_blank">
-                    An interactive dashboard</a> was designed to serve as a tool for
-                    transportation authorities to explore the public safety risks associated with historical work events
-                    as well as the historical crash rates on all New York City roads and intersections.
-                    <a href="https://workzone-collision-predict.herokuapp.com/" target="_blank">A predictive web
-                        application</a> was also built off the results of the clustering methodology to inform the
-                    planning of
-                    multiple new construction events simultaneously. It would aid decision making to avoid situations
-                    with high crash risk.</p>
-                <div id="results__dashboard">
-                    <h3>Dashboard</h3>
-                    <iframe src="https://workzone-collision-analysis.github.io/capstone/dashboard/"></iframe>
-                </div>
-            </section>
-            <section class="container-fluid main__section" id="main__about">
-                <h2>Team</h2>
-                <p>This project was completed as part of the 2020 Capstone process for the Center for Urban Science and
-                    Progress (CUSP) at NYU. The team would like to thank capstone sponsor HDR and their partners for
-                    their help in the execution of this research. </p>
-                <ul class="team__student">
-                    <li class="student__column">
-                        <div class="student__circle">
-                            <span>Collier, John</span>
-                            <div class="team__link">
-                                <a href="https://www.linkedin.com/in/john-collier-6557115b/">
-                                    <img alt="linkedin link" src="src/image/linkedin.png">
-                                </a>
-                                <a href="https://github.com/johncollier">
-                                    <img alt="github link" src="src/image/github.png">
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="student__column">
-                        <div class="student__circle">
-                            <span>Han, Seunggyun</span>
-                            <div class="team__link">
-                                <a href="https://www.linkedin.com/in/seunggyunhancodes/">
-                                    <img alt="linkedin link" src="src/image/linkedin.png">
-                                </a>
-                                <a href="https://github.com/Aete">
-                                    <img alt="github link" src="src/image/github.png">
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="student__column">
-                        <div class="student__circle">
-                            <span>Jaber, Linda</span>
-                            <div class="team__link">
-                                <a href="https://www.linkedin.com/in/lindajaber/">
-                                    <img alt="linkedin link" src="src/image/linkedin.png">
-                                </a>
-                                <a href="https://github.com/lindaJaber">
-                                    <img alt="github link" src="src/image/github.png">
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="student__column">
-                        <div class="student__circle">
-                            <span>Singh, Akhil</span>
-                            <div class="team__link">
-                                <a href="https://www.linkedin.com/in/akhil-k-singh/">
-                                    <img alt="linkedin link" src="src/image/linkedin.png">
-                                </a>
-                                <a href="https://github.com/akhilksingh">
-                                    <img alt="github link" src="src/image/github.png">
-                                </a>
-                            </div>
-                        </div>
-                    </li>
+                <h4>511 Events</h4>
+                <span>Geometry: Point</span>
+                <ul class="data__column-attribute">
+                  <li>Location,</li>
+                  <li>Duration,</li>
+                  <li>Season</li>
                 </ul>
-                <h3>Mentors</h3>
-                <ul class="team__mentor">
-                    <li class="mentor__column">
-                        <div class="mentor__circle">
-                            <span>Ozbay, Kaan</span>
-                            <div class="team__link">
-                                <a href="https://www.linkedin.com/in/kaan-ozbay-4805413/">
-                                    <img alt="linkedin link" class="linkedin" src="src/image/linkedin.png">
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="mentor__column">
-                        <div class="mentor__circle">
-                            <span>Khan, Junaid</span>
-                        </div>
-                    </li>
+              </div>
+              <div class="col-8 col-sm-5 col-md-4 col-lg-4 data__column">
+                <div class="data__column-icon">
+                  <img
+                    alt="road construction"
+                    src="src/image/construction.png"
+                  />
+                </div>
+                <h4>Street Closure</h4>
+                <span>Geometry: Line</span>
+                <ul class="data__column-attribute" id="sc__attr">
+                  <li>Length</li>
                 </ul>
-            </section>
+              </div>
+              <div class="col-8 col-sm-5 col-md-4 col-lg-4 data__column">
+                <div class="data__column-icon">
+                  <img
+                    alt="crash symbol"
+                    id="crash_icon"
+                    src="src/image/crash_icon.png"
+                  />
+                </div>
+                <h4>Crash</h4>
+                <span>Geometry: Point</span>
+                <ul class="data__column-attribute" id="crash__attr">
+                  <li>Number of crashes</li>
+                </ul>
+              </div>
+              <div class="col-8 col-sm-5 col-md-4 col-lg-4 data__column">
+                <div class="data__column-icon">
+                  <img alt="crash symbol" src="src/image/lion.png" />
+                </div>
+                <h4>LION</h4>
+                <span>Geometry: Line</span>
+                <ul class="data__column-attribute">
+                  <li>Roadway type,</li>
+                  <li>Street width,</li>
+                  <li>Posted speed</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section class="container-fluid main__section" id="main__methodology">
+            <h2 id="section3">Methodology</h2>
+            <div id="methodology__wrangling">
+              <h3>Data Wrangling</h3>
+              <p>
+                The data sources were produced by various entities and used
+                different geometric representations. Therefore, there was a need
+                for a standardized street network onto which data sets, namely
+                LION, crashes, and work zones, could be joined. SharedStreets –
+                a tool that creates a shared reference system for disparate
+                street networks – provided a solution to connect the data. Each
+                record in the LION, collisions and WZ data was assigned a
+                ‘SharedStreets geometry id’. Based on this id, characteristics
+                of streets, collisions, and work zones were linked. The data was
+                filtered to include only durations less than 24 hours, and
+                number of crashes happening within 900 feet of a work zone was
+                calculated. Then the Street Closures data was joined to get the
+                length attribute in feet.
+              </p>
+              <div class="methodology__image">
+                <img
+                  alt="flow chart of the project"
+                  src="src/image/flowchart.png"
+                />
+              </div>
+            </div>
+            <div id="methodology__clustering">
+              <h3>Clustering</h3>
+              <p>
+                With the spatial datasets wrangled into a common reference
+                system, the team employed a k-means clustering algorithm. This
+                approach was selected to provide a predictive framework to
+                understand the probability of a crash occurring in the proximity
+                of a work zone given certain characteristics. The clustering
+                approach also provides the opportunity to identify different
+                “cohorts” of work zones and identify work zones that may have a
+                higher crash probability. Two separate clustering attempts were
+                made – one with a larger dataset that did not contain a length
+                attribute and one smaller subset of records that were able to be
+                matched to permit data that contained a length attribute. The
+                collision probability was then calculated by dividing the number
+                of WZs witnessing a crash by the total number of WZs for each
+                cluster.
+              </p>
+              <div class="methodology__image">
+                <img
+                  id="clustering_img"
+                  alt="clustering"
+                  src="src/image/cluster_method.png"
+                />
+                <img
+                  id="clustering_img_mobile"
+                  alt="clustering"
+                  src="src/image/cluster_method_mobile.png"
+                />
+              </div>
+            </div>
+          </section>
+          <section class="container-fluid main__section" id="main__results">
+            <h2 id="section4">Results</h2>
+            <h3>Clustering</h3>
+            <p>
+              The silhouette analysis was used to choose an optimal value for
+              the number of clusters k=4. The predicted probability (using the
+              train set) of a crash happening in each of the four clusters is
+              16%, 13%, 14%, and 16% respectively.
+              <a
+                href="https://workzone-collision-analysis.github.io/capstone/dashboard/"
+                target="_blank"
+              >
+                An interactive dashboard</a
+              >
+              was designed to serve as a tool for transportation authorities to
+              explore the public safety risks associated with historical work
+              events as well as the historical crash rates on all New York City
+              roads and intersections.
+              <a
+                href="https://workzone-collision-predict.herokuapp.com/"
+                target="_blank"
+                >A predictive web application</a
+              >
+              was also built off the results of the clustering methodology to
+              inform the planning of multiple new construction events
+              simultaneously. It would aid decision making to avoid situations
+              with high crash risk.
+            </p>
+            <div id="results__dashboard">
+              <h3>Dashboard</h3>
+              <iframe
+                src="https://workzone-collision-analysis.github.io/capstone/dashboard/"
+              ></iframe>
+            </div>
+          </section>
+          <section class="container-fluid main__section" id="main__about">
+            <h2>Team</h2>
+            <p>
+              This project was completed as part of the 2020 Capstone process
+              for the Center for Urban Science and Progress (CUSP) at NYU. The
+              team would like to thank capstone sponsor HDR and their partners
+              for their help in the execution of this research.
+            </p>
+            <ul class="team__student">
+              <li class="student__column">
+                <div class="student__circle">
+                  <span>Collier, John</span>
+                  <div class="team__link">
+                    <a
+                      href="https://www.linkedin.com/in/john-collier-6557115b/"
+                    >
+                      <img alt="linkedin link" src="src/image/linkedin.png" />
+                    </a>
+                    <a href="https://github.com/johncollier">
+                      <img alt="github link" src="src/image/github.png" />
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="student__column">
+                <div class="student__circle">
+                  <span>Han, Seunggyun</span>
+                  <div class="team__link">
+                    <a href="https://www.linkedin.com/in/seunggyunhancodes/">
+                      <img alt="linkedin link" src="src/image/linkedin.png" />
+                    </a>
+                    <a href="https://github.com/Aete">
+                      <img alt="github link" src="src/image/github.png" />
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="student__column">
+                <div class="student__circle">
+                  <span>Jaber, Linda</span>
+                  <div class="team__link">
+                    <a href="https://www.linkedin.com/in/lindajaber/">
+                      <img alt="linkedin link" src="src/image/linkedin.png" />
+                    </a>
+                    <a href="https://github.com/lindaJaber">
+                      <img alt="github link" src="src/image/github.png" />
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="student__column">
+                <div class="student__circle">
+                  <span>Singh, Akhil</span>
+                  <div class="team__link">
+                    <a href="https://www.linkedin.com/in/akhil-k-singh/">
+                      <img alt="linkedin link" src="src/image/linkedin.png" />
+                    </a>
+                    <a href="https://github.com/akhilksingh">
+                      <img alt="github link" src="src/image/github.png" />
+                    </a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <h3>Mentors</h3>
+            <ul class="team__mentor">
+              <li class="mentor__column">
+                <div class="mentor__circle">
+                  <span>Ozbay, Kaan</span>
+                  <div class="team__link">
+                    <a href="https://www.linkedin.com/in/kaan-ozbay-4805413/">
+                      <img
+                        alt="linkedin link"
+                        class="linkedin"
+                        src="src/image/linkedin.png"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="mentor__column">
+                <div class="mentor__circle">
+                  <span>Khan, Junaid</span>
+                </div>
+              </li>
+            </ul>
+          </section>
         </main>
+      </div>
     </div>
-</div>
-<script src="src/js/nav.js"></script>
-</body>
+    <script src="src/js/nav.js"></script>
+  </body>
 </html>
